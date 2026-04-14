@@ -23,8 +23,8 @@
   border-radius: 20px;
 
   width: 95%;
-  max-width: 850px;   /* 🔥 aumentei aqui */
-  min-height: 85vh;   /* 🔥 ocupa mais altura */
+  max-width: 850px;
+  min-height: 85vh;
 
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -38,11 +38,9 @@
       margin-bottom: 10px;
     }
 
-    /* Logo da tela inicial menor e controlada */
-    /* Logo da tela inicial maior e proporcional */
     .logo-inicial {
       width: 100%;
-      max-width: 400px; /* 🔥 agora sim maior */
+      max-width: 400px;
       height: auto;
       margin: 0 auto 20px auto;
       display: block;
@@ -71,9 +69,16 @@
 </head>
 <body>
 <div class="container" id="game">
-  <img src="./logo.jpg" alt="Tubarões do Mistério" class="logo-inicial">
-  <h1 style="margin-bottom: 10px;">🦈 Tubarões do Mistério</h1>
-  <p style="margin-bottom: 20px;">Teste seus conhecimentos sobre tubarões em diferentes níveis!</p>
+  <img src="./logo.jpg" alt="Tubarões Sem Mistério: Conhecendo para Conviver" class="logo-inicial">
+  <h1 style="margin-bottom: 10px;">Tubarões Sem Mistério: Conhecendo para Conviver </h1>
+  <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6;">
+    Este jogo foi desenvolvido para explorar, de forma interativa e educativa, os principais aspectos da biologia,
+    ecologia e importância dos tubarões nos ecossistemas marinhos. Ao longo das fases, você irá testar seus
+    conhecimentos sobre anatomia, comportamento, estratégias reprodutivas e o papel ecológico desses organismos.
+    
+    Além disso, o quiz busca desmistificar ideias equivocadas e reforçar a importância da conservação dos tubarões,
+    destacando seu papel como predadores de topo e reguladores das cadeias tróficas.
+  </p>
   <button onclick="showLevels()">▶️ Começar</button>
 </div>
 
