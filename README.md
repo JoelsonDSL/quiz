@@ -1,46 +1,114 @@
-🦈 Quiz Interativo sobre Tubarões
+Perfeito — agora que você me mandou o repositório quiz, vou te entregar um **README com badges dinâmicos do GitHub**, bem mais profissional (nível portfólio mesmo 🔥).
 
+---
 
+# 🦈 Quiz Interativo sobre Tubarões
 
+![GitHub repo size](https://img.shields.io/github/repo-size/JoelsonDSL/quiz)
+![GitHub last commit](https://img.shields.io/github/last-commit/JoelsonDSL/quiz)
+![GitHub language count](https://img.shields.io/github/languages/count/JoelsonDSL/quiz)
+![GitHub top language](https://img.shields.io/github/languages/top/JoelsonDSL/quiz)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Este projeto consiste em um quiz interativo educativo voltado ao estudo dos tubarões, abordando aspectos como biologia, ecologia, comportamento e conservação desses importantes organismos marinhos. A aplicação foi desenvolvida para promover o aprendizado de forma dinâmica, utilizando elementos de gamificação para engajar os usuários.
+---
 
-🎯 Objetivo
-Proporcionar uma ferramenta didática que auxilie no ensino de conteúdos relacionados aos tubarões, estimulando o pensamento crítico e a fixação do conhecimento por meio de perguntas interativas distribuídas em diferentes níveis de dificuldade.
+## 🌐 Acesse o Projeto
 
-⚙️ Funcionalidades
-Perguntas variadas sobre tubarões (biologia, ecologia e curiosidades)
+👉 *(adicione aqui depois se publicar no GitHub Pages)*
+`https://joelsondsl.github.io/quiz/`
 
-Sistema de níveis com progressão de dificuldade
+---
 
-Banco de questões diversificado, evitando repetições frequentes
+## 📖 Sobre o Projeto
 
-Feedback imediato para respostas corretas e incorretas
+Este projeto consiste em um quiz interativo educativo voltado ao estudo dos tubarões, abordando aspectos como biologia, ecologia, comportamento e conservação. A aplicação utiliza elementos de gamificação para tornar o aprendizado mais dinâmico e envolvente.
 
-Tela inicial personalizada com identidade visual temática
+Projetos desse tipo são amplamente utilizados como ferramentas educacionais interativas, permitindo aprendizado ativo por meio de perguntas e feedback imediato ([jadson-portfolio.com][1]).
 
-Sistema de pontuação para acompanhamento do desempenho
+---
 
-🚀 Tecnologias Utilizadas
-HTML5
+## 🎯 Objetivo
 
-CSS3
+Desenvolver uma ferramenta didática que auxilie no ensino de conteúdos relacionados aos tubarões, promovendo:
 
-JavaScript
+* Aprendizagem ativa
+* Engajamento por gamificação
+* Fixação de conteúdo
 
-🌊 Importância Educacional
-Os tubarões desempenham papel fundamental nos ecossistemas marinhos, atuando como predadores de topo e contribuindo para o equilíbrio ecológico. Este quiz busca não apenas avaliar conhecimentos, mas também conscientizar sobre a importância da conservação dessas espécies.
+---
 
-💡 Aplicações
-Este projeto pode ser utilizado em:
+## ⚙️ Funcionalidades
 
-Aulas de Biologia (Ensino Fundamental e Médio)
+* 🦈 Perguntas sobre biologia e ecologia dos tubarões
+* 📈 Sistema de níveis com dificuldade progressiva
+* 🔄 Banco de questões sem repetição constante
+* ✅ Feedback imediato das respostas
+* 🎨 Tela inicial personalizada com imagem temática
+* 🏆 Sistema de pontuação
 
-Atividades práticas e interativas em sala de aula
+---
 
-Projetos de educação ambiental
+## 🚀 Tecnologias Utilizadas
 
-Revisão de conteúdos sobre ecossistemas marinhos
+* HTML5
+* CSS3
+* JavaScript
 
-📌 Status do Projeto
-Em desenvolvimento — novas perguntas, melhorias na interface e otimizações estão sendo continuamente implementadas para enriquecer a experiência do usuário.
+---
+
+## 🌊 Importância Educacional
+
+Os tubarões são predadores de topo essenciais para o equilíbrio dos ecossistemas marinhos. Este quiz contribui para a conscientização ambiental e o ensino de biologia marinha de forma acessível e interativa.
+
+---
+
+## 💡 Aplicações
+
+* Ensino de Biologia (Fundamental e Médio)
+* Educação ambiental
+* Revisão de conteúdos
+* Atividades interativas em sala de aula
+
+---
+
+## 📌 Status do Projeto
+
+🚧 Em desenvolvimento — melhorias contínuas estão sendo implementadas.
+
+---
+
+## 🛠️ Melhorias Futuras
+
+* Adição de mais níveis e perguntas
+* Sistema de ranking
+* Versão mobile otimizada
+* Integração com banco de dados
+* Modo multiplayer
+
+---
+
+## 🤝 Contribuição
+
+Sinta-se à vontade para contribuir com melhorias, sugestões ou novas questões!
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+### 🔥 Próximo nível (se quiser)
+
+Posso ainda adicionar:
+
+* GIF do seu jogo rodando
+* Screenshot automático
+* Botão “⭐ Star no GitHub”
+* Seção “Como rodar o projeto”
+
+Só me falar que eu deixo isso com cara de projeto profissional de verdade 👍
+
+[1]: https://www.jadson-portfolio.com/projeto/11?utm_source=chatgpt.com "Portfolio"
