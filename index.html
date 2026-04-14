@@ -64,8 +64,8 @@
 <script>
 const bancoQuestoes = {
   facil: [
-    {question:"Tubarões são vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Possuem coluna vertebral cartilaginosa."},
-    {question:"Tubarões vivem em qual ambiente?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Água doce","Água salgada","Ambos"],correct:1,explanation:"A maioria vive em ambiente marinho."},
+    {question:"Tubarões são vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Sim, eles possuem coluna vertebral cartilaginosa."},
+    {question:"Tubarões vivem em qual ambiente?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Água doce","Água salgada","Ambos"],correct:1,explanation:"A maioria dos tubarões habitam o ambiente marinho."},
     {question:"Tubarões respiram por?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Pulmões","Brânquias","Pele"],correct:1,explanation:"Respiram por brânquias."},
     {question:"Tubarões possuem ossos?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Poucos"],correct:1,explanation:"Seu esqueleto é cartilaginoso."},
     {question:"Qual formato da cauda ajuda na natação?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Assimétrica","Redonda","Quadrada"],correct:0,explanation:"A cauda heterocerca auxilia na propulsão."},
@@ -107,14 +107,14 @@ let quiz = [];
 let current = 0;
 let score = 0;
 let lives = 3;
-let time = 30;
+let time = 15;
 let timerInterval;
 
 function startGame(level){
   quiz = bancoQuestoes[level];
   document.getElementById("game").innerHTML = `
     <div class="top-bar">
-      <span id="lives">❤️❤️❤️</span>
+      <span id="lives">🦈🦈🦈</span>
       <span id="timer">⏱️ 30</span>
     </div>
     <div class="progress"><div class="progress-bar" id="progress"></div></div>
