@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz de Tubarões</title>
+  <title>Quiz Profissional de Tubarões</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      /* Imagem de fundo ajustada para cobrir toda a tela */
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
-      background-size: cover;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
       color: white;
       display: flex;
       justify-content: center;
@@ -18,73 +16,54 @@
       margin: 0;
     }
     .container {
-      background: rgba(0,0,0,0.85); /* Um pouco mais escuro para melhor leitura */
+      background: white; /* fundo branco na tela inicial */
+      color: black; /* texto preto */
       padding: 30px;
       border-radius: 20px;
       width: 90%;
-      max-width: 500px; /* Reduzi para ficar mais elegante */
+      max-width: 500px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
-    /* Estilo da logo inicial */
-    .logo-inicial {
+    img {
       width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    /* Imagens das questões */
-    #image {
-      width: 100%;
-      max-height: 200px;
+      max-height: 250px;
       object-fit: cover;
       border-radius: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     button {
       display: block;
-      margin: 10px auto;
-      padding: 15px;
+      margin: 8px auto;
+      padding: 12px;
       width: 100%;
       border: none;
       border-radius: 12px;
       background: #00bfff;
       color: white;
       font-size: 16px;
-      font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
     }
-    button:hover {
-      background: #009acc;
-      transform: scale(1.02);
-    }
-    #nextBtn { display: none; background: #32cd32; margin-top: 20px; }
+    #nextBtn { display: none; background: #32cd32; }
     .top-bar {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 15px;
-      font-weight: bold;
+      margin-bottom: 10px;
     }
-    .progress { height: 10px; background: #333; border-radius: 5px; overflow: hidden; margin-bottom: 15px; }
-    .progress-bar { height: 100%; width: 0%; background: #00ffcc; transition: width 0.3s; }
-    #feedback { font-weight: bold; font-size: 1.2em; margin: 10px 0; }
-    #explanation { font-style: italic; color: #ccc; margin-bottom: 10px; }
+    .progress { height: 8px; background: #555; border-radius: 5px; overflow: hidden; }
+    .progress-bar { height: 100%; width: 0%; background: #00ffcc; }
   </style>
 </head>
 <body>
-
 <div class="container" id="game">
-  <img src="./logo.jpg" alt="Tubarões do Mistério" class="logo-inicial">
-  <h2 style="margin-bottom: 20px;">Escolha o nível</h2>
+  <img src="./logo.png" alt="Imagem inicial" style="max-height:300px; object-fit:contain;">
+  <h2>Escolha o nível</h2>
   <button onclick="startGame('facil')">Fácil</button>
   <button onclick="startGame('medio')">Médio</button>
   <button onclick="startGame('dificil')">Difícil</button>
 </div>
 
 <script>
-// O seu banco de questões permanece EXATAMENTE o mesmo
 const bancoQuestoes = {
   facil: [
     {question:"Tubarões são animais vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Possuem coluna vertebral cartilaginosa."},
@@ -98,8 +77,32 @@ const bancoQuestoes = {
     {question:"Eles são peixes?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"São peixes cartilaginosos."},
     {question:"Tubarões têm um tipo de escama?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Poucas"],correct:0,explanation:"Possuem dentículos dérmicos."}
   ],
-  medio: [ /* Seus dados do medio... */ ],
-  dificil: [ /* Seus dados do dificil... */ ]
+
+  medio: [
+    {question:"Tubarões pertencem a qual classe?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Osteichthyes","Chondrichthyes","Reptilia"],correct:1,explanation:"Classe dos peixes cartilaginosos."},
+    {question:"Qual a estrutura presente no tubarão que detecta eletricidade?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Linha lateral","Ampolas de Lorenzini","Olhos"],correct:1,explanation:"Detectam campos elétricos."},
+    {question:"Qual a função da linha lateral?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Visão","Pressão/vibração","Olfato"],correct:1,explanation:"Detecta movimento da água."},
+    {question:"Quais os tipos de fecundação?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Externa","Interna","Mista"],correct:1,explanation:"Fecundação interna."},
+    {question:"Qual é o nome do órgão reprodutor do macho?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Pênis","Clásper","Tentáculo"],correct:1,explanation:"Clásper usado na reprodução."},
+    {question:"Qual a estratégia reprodutiva mais comum no grupo?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Ovoviviparidade","Viviparidade","Ambas"],correct:2,explanation:"Existem diferentes estratégias."},
+    {question:"Qual a velocidade de crescimento?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Rápida","Lenta","Média"],correct:1,explanation:"Crescimento lento."},
+    {question:"Qual o número de filhotes?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Muitos","Poucos","Nenhum"],correct:1,explanation:"Baixa fecundidade."},
+    {question:"Sabemos que eles são predadores de topo, mas quem preda os tubarõwa?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Orcas","Golfinhos","Nenhum"],correct:0,explanation:"Orcas podem predar tubarões."},
+    {question:"Qual a importância ecológica?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Controle populacional","Produção","Decomposição"],correct:0,explanation:"Regulam cadeias tróficas."}
+  ],
+
+  dificil: [
+    {question:"Tubarões são considerados?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Predadores de topo","Consumidores primários","Produtores"],correct:0,explanation:"Estão no topo da cadeia alimentar."},
+    {question:"Efeito da remoção de tubarões?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Equilíbrio","Cascata trófica","Nenhum"],correct:1,explanation:"Provoca desequilíbrios ecológicos."},
+    {question:"Estratégia K ou r?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["r","K","Ambas"],correct:1,explanation:"Estratégia K: crescimento lento."},
+    {question:"Importância para pescarias?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Negativa","Regulatória","Nenhuma"],correct:1,explanation:"Mantêm equilíbrio das populações."},
+    {question:"Sensibilidade à sobrepesca?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Alta","Baixa","Nula"],correct:0,explanation:"São altamente vulneráveis."},
+    {question:"Taxa de reposição populacional?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Alta","Baixa","Média"],correct:1,explanation:"Reposição lenta."},
+    {question:"Impacto do finning?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Neutro","Extinção","Equilíbrio"],correct:1,explanation:"Contribui para declínio populacional."},
+    {question:"Indicadores ecológicos?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Parcial"],correct:0,explanation:"Indicam saúde do ecossistema."},
+    {question:"Papel em recifes?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Regulação","Produção","Destruição"],correct:0,explanation:"Controlam populações de presas."},
+    {question:"Consequência da extinção local?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Estabilidade","Desequilíbrio","Nada"],correct:1,explanation:"Provoca cascatas tróficas."}
+  ]
 };
 
 let quiz = [];
@@ -111,11 +114,6 @@ let timerInterval;
 
 function startGame(level){
   quiz = bancoQuestoes[level];
-  current = 0;
-  score = 0;
-  lives = 3;
-  
-  // Limpa o container e prepara para as perguntas
   document.getElementById("game").innerHTML = `
     <div class="top-bar">
       <span id="lives">❤️❤️❤️</span>
@@ -123,11 +121,11 @@ function startGame(level){
     </div>
     <div class="progress"><div class="progress-bar" id="progress"></div></div>
     <img id="image">
-    <h2 id="question" style="font-size: 1.2rem;"></h2>
+    <h2 id="question"></h2>
     <div id="answers"></div>
-    <div id="feedback"></div>
-    <div id="explanation"></div>
-    <button id="nextBtn" onclick="nextQuestion()">Próxima Pergunta</button>
+    <p id="feedback"></p>
+    <p id="explanation"></p>
+    <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
   `;
   loadQuestion();
 }
@@ -135,75 +133,65 @@ function startGame(level){
 function startTimer(){
   clearInterval(timerInterval);
   time=30;
-  document.getElementById("timer").innerText="⏱️ "+time;
   timerInterval=setInterval(()=>{
     time--;
     document.getElementById("timer").innerText="⏱️ "+time;
-    if(time<=0){
-      clearInterval(timerInterval);
-      checkAnswer(-1); // Estoura o tempo como resposta errada
-    }
+    if(time<=0){clearInterval(timerInterval);loseLife();}
   },1000);
 }
 
 function loadQuestion(){
-  const q = quiz[current];
-  document.getElementById("question").innerText = q.question;
-  document.getElementById("image").src = q.image;
-  const answersDiv = document.getElementById("answers");
+  const q=quiz[current];
+  document.getElementById("question").innerText=q.question;
+  document.getElementById("image").src=q.image;
+  const answersDiv=document.getElementById("answers");
 
-  answersDiv.innerHTML = "";
-  document.getElementById("feedback").innerText = "";
-  document.getElementById("explanation").innerText = "";
-  document.getElementById("nextBtn").style.display = "none";
+  answersDiv.innerHTML="";
+  document.getElementById("feedback").innerText="";
+  document.getElementById("explanation").innerText="";
+  document.getElementById("nextBtn").style.display="none";
 
-  q.answers.forEach((ans, i) => {
-    const btn = document.createElement("button");
-    btn.innerText = ans;
-    btn.onclick = () => checkAnswer(i);
+  q.answers.forEach((ans,i)=>{
+    const btn=document.createElement("button");
+    btn.innerText=ans;
+    btn.onclick=()=>checkAnswer(i);
     answersDiv.appendChild(btn);
   });
 
-  document.getElementById("progress").style.width = (current / quiz.length) * 100 + "%";
+  document.getElementById("progress").style.width=(current/quiz.length)*100+"%";
   startTimer();
 }
 
 function checkAnswer(i){
   clearInterval(timerInterval);
-  const q = quiz[current];
-  const feedback = document.getElementById("feedback");
+  const q=quiz[current];
 
-  if(i === q.correct){
-    score++;
-    feedback.innerText = "✅ Correto!";
-    feedback.style.color = "#32cd32";
-  } else {
-    lives--;
-    document.getElementById("lives").innerText = "❤️".repeat(lives);
-    feedback.innerText = i === -1 ? "⏱️ Tempo esgotado!" : "❌ Errado!";
-    feedback.style.color = "#ff4500";
-    if(lives <= 0) {
-       setTimeout(() => endGame("💀 Você perdeu todas as vidas!"), 1000);
-       return;
-    }
-  }
+  if(i===q.correct){score++;document.getElementById("feedback").innerText="✅ Correto!";}
+  else{document.getElementById("feedback").innerText="❌ Errado!";loseLife();}
 
-  document.getElementById("explanation").innerText = q.explanation;
-  document.getElementById("nextBtn").style.display = "block";
-  document.querySelectorAll("#answers button").forEach(b => b.disabled = true);
+  document.getElementById("explanation").innerText=q.explanation;
+  document.getElementById("nextBtn").style.display="block";
+
+  document.querySelectorAll("#answers button").forEach(b=>b.disabled=true);
+}
+
+function loseLife(){
+  lives--;
+  document.getElementById("lives").innerText="❤️".repeat(lives);
+  if(lives<=0) endGame("💀 Você perdeu!");
 }
 
 function nextQuestion(){
   current++;
-  if(current < quiz.length) loadQuestion();
-  else endGame("🏆 Parabéns! Você concluiu o nível.");
+  if(current<quiz.length) loadQuestion();
+  else endGame("🏆 Fim do jogo!");
 }
 
 function endGame(msg){
-  document.getElementById("game").innerHTML = `
-    <h2 style="margin-top:20px;">${msg}</h2>
-    <p style="font-size: 1.5rem; margin: 20px 0;">Pontuação: ${score}/${quiz.length}</p>
-    <button onclick="location.reload()">Voltar ao Início</button>
+  document.getElementById("game").innerHTML=`
+    <h2>${msg}</h2>
+    <p>Pontuação: ${score}/${quiz.length}</p>
+    <button onclick="location.reload()">Jogar novamente</button>
   `;
 }
 </script>
