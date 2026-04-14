@@ -1,5 +1,3 @@
-Perfeito — agora que você me mandou o repositório quiz, vou te entregar um **README com badges dinâmicos do GitHub**, bem mais profissional (nível portfólio mesmo 🔥).
-
 ---
 
 # 🦈 Quiz Interativo sobre Tubarões
