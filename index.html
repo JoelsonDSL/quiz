@@ -68,7 +68,7 @@
 <div class="container">
   <div class="top-bar">
     <span id="lives">❤️❤️❤️</span>
-    <span id="timer">⏱️ 15</span>
+    <span id="timer">⏱️ 20</span>
   </div>
   <div class="progress"><div class="progress-bar" id="progress"></div></div>
   <img id="image" src="" alt="tubarão">
@@ -107,12 +107,12 @@ const quiz = [
 let current = 0;
 let score = 0;
 let lives = 3;
-let time = 15;
+let time = 20;
 let timerInterval;
 
 function startTimer() {
   clearInterval(timerInterval);
-  time = 15;
+  time = 20;
   document.getElementById("timer").innerText = "⏱️ " + time;
 
   timerInterval = setInterval(() => {
