@@ -53,9 +53,13 @@
     .progress-bar { height: 100%; width: 0%; background: #00ffcc; }
   </style>
 </head>
-<body>
 <div class="container" id="game">
-  <img src="./logo.png" alt="Imagem inicial" style="max-height:300px; object-fit:contain;">
+
+  <div style="display:flex; justify-content:center; gap:10px;">
+    <img src="./logo.jpg" style="max-height:250px;">
+    <img src="./logo2.jpg" style="max-height:250px;">
+  </div>
+
   <h2>Escolha o nível</h2>
   <button onclick="startGame('facil')">Fácil</button>
   <button onclick="startGame('medio')">Médio</button>
