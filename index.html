@@ -80,6 +80,41 @@
     destacando seu papel como predadores de topo e reguladores das cadeias tróficas.
   </p>
 <button class="start-btn" onclick="showLevels()">▶️ Começar</button>
+/* Botão inicial com brilho */
+.start-btn {
+  font-size: 28px;
+  padding: 25px;
+  font-weight: bold;
+  background: #00bfff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.start-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.start-btn:hover::before {
+  left: 130%;
+  transition: left 0.6s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
 </div>
 
 <script>
