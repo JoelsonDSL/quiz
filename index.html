@@ -57,11 +57,10 @@
 </head>
 <body>
 <div class="container" id="game">
-  <img src="./logo.png" alt="Imagem inicial" style="max-height:300px; object-fit:contain;">
-  <h2>Escolha o nível</h2>
-  <button onclick="startGame('facil')">Fácil</button>
-  <button onclick="startGame('medio')">Médio</button>
-  <button onclick="startGame('dificil')">Difícil</button>
+  <img src="./logo.jpg" alt="Tubarões do Mistério" class="logo-inicial">
+  <h1 style="margin-bottom: 10px;">🦈 Tubarões do Mistério</h1>
+  <p style="margin-bottom: 20px;">Teste seus conhecimentos sobre tubarões em diferentes níveis!</p>
+  <button onclick="showLevels()">▶️ Começar</button>
 </div>
 
 <script>
@@ -112,6 +111,16 @@ let score = 0;
 let lives = 3;
 let time = 30;
 let timerInterval;
+
+function showLevels(){
+  document.getElementById("game").innerHTML = `
+    <img src="./logo.jpg" class="logo-inicial">
+    <h2 style="margin-bottom: 20px;">Escolha o nível</h2>
+    <button onclick="startGame('facil')">Fácil</button>
+    <button onclick="startGame('medio')">Médio</button>
+    <button onclick="startGame('dificil')">Difícil</button>
+  `;
+}
 
 function startGame(level){
   quiz = bancoQuestoes[level];
