@@ -55,6 +55,7 @@
 </head>
 <body>
 <div class="container" id="game">
+  <img src="https://drive.google.com/uc?export=view&id=1XGMuU3-u9rlWpNeTF6WNEeF5Cd54oQL7" alt="Imagem inicial">
   <h2>Escolha o nível</h2>
   <button onclick="startGame('facil')">Fácil</button>
   <button onclick="startGame('medio')">Médio</button>
@@ -64,29 +65,29 @@
 <script>
 const bancoQuestoes = {
   facil: [
-    {question:"Tubarões são vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Sim, eles possuem coluna vertebral cartilaginosa."},
-    {question:"Tubarões vivem em qual ambiente?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Água doce","Água salgada","Ambos"],correct:1,explanation:"A maioria dos tubarões habitam o ambiente marinho."},
-    {question:"Tubarões respiram por?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Pulmões","Brânquias","Pele"],correct:1,explanation:"Respiram por brânquias."},
+    {question:"Tubarões são animais vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Possuem coluna vertebral cartilaginosa."},
+    {question:"Em qual ambiente eles vivem?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Água doce","Água salgada","Ambos"],correct:1,explanation:"A maioria vive em ambiente marinho."},
+    {question:"Eles respiram através de?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Pulmões","Brânquias","Pele"],correct:1,explanation:"Respiram por brânquias."},
     {question:"Tubarões possuem ossos?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Poucos"],correct:1,explanation:"Seu esqueleto é cartilaginoso."},
     {question:"Qual formato da cauda ajuda na natação?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Assimétrica","Redonda","Quadrada"],correct:0,explanation:"A cauda heterocerca auxilia na propulsão."},
     {question:"Tubarões são carnívoros?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Onívoros"],correct:0,explanation:"Alimentam-se de outros animais."},
     {question:"Quantos sentidos básicos eles têm?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["3","5","7"],correct:2,explanation:"Possuem sentidos adicionais como eletrorecepção."},
-    {question:"Tubarões trocam dentes?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Raramente"],correct:0,explanation:"Substituem dentes continuamente."},
+    {question:"Tubarões fazem a troca dos dentes?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Raramente"],correct:0,explanation:"Substituem dentes continuamente."},
     {question:"Eles são peixes?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"São peixes cartilaginosos."},
-    {question:"Tubarões têm escamas?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Poucas"],correct:0,explanation:"Possuem dentículos dérmicos."}
+    {question:"Tubarões têm um tipo de escama?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Poucas"],correct:0,explanation:"Possuem dentículos dérmicos."}
   ],
 
   medio: [
     {question:"Tubarões pertencem a qual classe?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Osteichthyes","Chondrichthyes","Reptilia"],correct:1,explanation:"Classe dos peixes cartilaginosos."},
-    {question:"Qual estrutura detecta eletricidade?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Linha lateral","Ampolas de Lorenzini","Olhos"],correct:1,explanation:"Detectam campos elétricos."},
-    {question:"Função da linha lateral?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Visão","Pressão/vibração","Olfato"],correct:1,explanation:"Detecta movimento da água."},
-    {question:"Tipo de fecundação?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Externa","Interna","Mista"],correct:1,explanation:"Fecundação interna."},
-    {question:"Órgão reprodutor do macho?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Pênis","Clásper","Tentáculo"],correct:1,explanation:"Clásper usado na reprodução."},
-    {question:"Estratégia reprodutiva comum?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Ovoviviparidade","Viviparidade","Ambas"],correct:2,explanation:"Existem diferentes estratégias."},
-    {question:"Velocidade de crescimento?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Rápida","Lenta","Média"],correct:1,explanation:"Crescimento lento."},
-    {question:"Número de filhotes?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Muitos","Poucos","Nenhum"],correct:1,explanation:"Baixa fecundidade."},
-    {question:"Predadores naturais?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Orcas","Golfinhos","Nenhum"],correct:0,explanation:"Orcas podem predar tubarões."},
-    {question:"Importância ecológica?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Controle populacional","Produção","Decomposição"],correct:0,explanation:"Regulam cadeias tróficas."}
+    {question:"Qual a estrutura presente no tubarão que detecta eletricidade?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Linha lateral","Ampolas de Lorenzini","Olhos"],correct:1,explanation:"Detectam campos elétricos."},
+    {question:"Qual a função da linha lateral?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Visão","Pressão/vibração","Olfato"],correct:1,explanation:"Detecta movimento da água."},
+    {question:"Quais os tipos de fecundação?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Externa","Interna","Mista"],correct:1,explanation:"Fecundação interna."},
+    {question:"Qual é o nome do órgão reprodutor do macho?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Pênis","Clásper","Tentáculo"],correct:1,explanation:"Clásper usado na reprodução."},
+    {question:"Qual a estratégia reprodutiva mais comum no grupo?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Ovoviviparidade","Viviparidade","Ambas"],correct:2,explanation:"Existem diferentes estratégias."},
+    {question:"Qual a velocidade de crescimento?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Rápida","Lenta","Média"],correct:1,explanation:"Crescimento lento."},
+    {question:"Qual o número de filhotes?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Muitos","Poucos","Nenhum"],correct:1,explanation:"Baixa fecundidade."},
+    {question:"Sabemos que eles são predadores de topo, mas quem preda os tubarõwa?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Orcas","Golfinhos","Nenhum"],correct:0,explanation:"Orcas podem predar tubarões."},
+    {question:"Qual a importância ecológica?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Controle populacional","Produção","Decomposição"],correct:0,explanation:"Regulam cadeias tróficas."}
   ],
 
   dificil: [
@@ -107,14 +108,14 @@ let quiz = [];
 let current = 0;
 let score = 0;
 let lives = 3;
-let time = 15;
+let time = 30;
 let timerInterval;
 
 function startGame(level){
   quiz = bancoQuestoes[level];
   document.getElementById("game").innerHTML = `
     <div class="top-bar">
-      <span id="lives">🦈🦈🦈</span>
+      <span id="lives">❤️❤️❤️</span>
       <span id="timer">⏱️ 30</span>
     </div>
     <div class="progress"><div class="progress-bar" id="progress"></div></div>
