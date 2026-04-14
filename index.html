@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0a2540, #1e90ff);
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
       color: white;
       display: flex;
       justify-content: center;
@@ -16,7 +16,7 @@
       margin: 0;
     }
     .container {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       padding: 20px;
       border-radius: 20px;
       width: 95%;
@@ -68,7 +68,7 @@
 <div class="container">
   <div class="top-bar">
     <span id="lives">❤️❤️❤️</span>
-    <span id="timer">⏱️ 20</span>
+    <span id="timer">⏱️ 30</span>
   </div>
   <div class="progress"><div class="progress-bar" id="progress"></div></div>
   <img id="image" src="" alt="tubarão">
@@ -83,36 +83,36 @@
 const quiz = [
   {
     question: "Qual é o maior tubarão do mundo?",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Whale_shark_Georgia_aquarium.jpg",
+    image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
     answers: ["Tubarão-branco", "Tubarão-baleia", "Tubarão-martelo"],
     correct: 1,
-    explanation: "O tubarão-baleia é o maior peixe do planeta, podendo ultrapassar 12 metros."
+    explanation: "O tubarão-baleia é o maior peixe do planeta, podendo ultrapassar 12 metros de comprimento."
   },
   {
     question: "Tubarões pertencem a qual grupo?",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg",
+    image: "https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",
     answers: ["Osteíctes", "Condritas", "Anfíbios"],
     correct: 1,
-    explanation: "São peixes cartilaginosos (Chondrichthyes), com esqueleto de cartilagem."
+    explanation: "Os tubarões pertencem à classe Chondrichthyes, caracterizada por esqueleto cartilaginoso e não ósseo."
   },
   {
     question: "Qual adaptação permite detectar presas?",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Hammerhead_shark.jpg",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",
     answers: ["Visão noturna", "Ampolas de Lorenzini", "Linha lateral"],
     correct: 1,
-    explanation: "As ampolas de Lorenzini detectam campos elétricos de outros organismos."
+    explanation: "As ampolas de Lorenzini permitem aos tubarões detectar campos elétricos gerados por outros organismos."
   }
 ];
 
 let current = 0;
 let score = 0;
 let lives = 3;
-let time = 20;
+let time = 30;
 let timerInterval;
 
 function startTimer() {
   clearInterval(timerInterval);
-  time = 20;
+  time = 30;
   document.getElementById("timer").innerText = "⏱️ " + time;
 
   timerInterval = setInterval(() => {
@@ -137,8 +137,16 @@ function updateProgress() {
 
 function loadQuestion() {
   const q = quiz[current];
+  const img = document.getElementById("image");
+
   document.getElementById("question").innerText = q.question;
-  document.getElementById("image").src = q.image;
+  img.src = q.image;
+
+  // fallback se imagem falhar
+  img.onerror = () => {
+    img.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Shark_icon.png";
+  };
+
   const answersDiv = document.getElementById("answers");
 
   answersDiv.innerHTML = "";
