@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-}
 <html lang="pt-BR">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -196,16 +194,219 @@ button:active {
 
 <script>
 const bancoQuestoes = {
-  facil: [
-    {question:"Tubarões são animais vertebrados?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Sim","Não","Depende"],correct:0,explanation:"Possuem coluna vertebral cartilaginosa."},
-    {question:"Em qual ambiente eles vivem?",image:"https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",answers:["Água doce","Água salgada","Ambos"],correct:1,explanation:"A maioria vive em ambiente marinho."}
-  ],
-  medio: [
-    {question:"Tubarões pertencem a qual classe?",image:"https://images.unsplash.com/photo-1558980664-10ea0d0c3b8b?auto=format&fit=crop&w=800&q=60",answers:["Osteichthyes","Chondrichthyes","Reptilia"],correct:1,explanation:"Classe dos peixes cartilaginosos."}
-  ],
-  dificil: [
-    {question:"Tubarões são considerados?",image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=60",answers:["Predadores de topo","Consumidores primários","Produtores"],correct:0,explanation:"Estão no topo da cadeia alimentar."}
-  ]
+facil: [
+    {
+      question: "Qual o maior tubarão que existe atualmente?", image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60", answers: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo"], correct: 1, explanation: "O Tubarão-Baleia pode atingir mais de 12 metros de comprimento."  },
+    {
+      question: "Do que é feito o esqueleto do tubarão?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Ossos rígidos", "Músculos apenas", "Cartilagem"],
+      correct: 2,
+      explanation: "O esqueleto é de cartilagem, o que os torna mais leves e flexíveis."
+    },
+    {
+      question: "Como se chamam os órgãos que detectam batimentos cardíacos das presas?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Ampolas de Lorenzini", "Linha Lateral", "Narinas"],
+      correct: 0,
+      explanation: "São pequenos poros que detectam campos elétricos."
+    },
+    {
+      question: "O tubarão-baleia se alimenta principalmente de:",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Grandes peixes", "Plâncton e pequenos peixes", "Focas"],
+      correct: 1,
+      explanation: "Apesar de gigante, ele é um animal filtrador."
+    },
+    {
+      question: "Quantas fendas branquiais a maioria dos tubarões possui?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["1 a 2", "5 a 7", "Mais de 10"],
+      correct: 1,
+      explanation: "A maioria possui de 5 a 7 pares de fendas branquiais."
+    },
+    {
+      question: "A pele do tubarão parece uma lixa por causa das escamas:",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Placoides", "Ciclóides", "Ctenóides"],
+      correct: 0,
+      explanation: "Também chamadas de dentículos dérmicos, reduzem o atrito na água."
+    },
+    {
+      question: "O que o tubarão usa para manter a flutuabilidade?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Bexiga natatória", "Fígado rico em óleo", "Pulmões"],
+      correct: 1,
+      explanation: "Como não possuem bexiga natatória, o óleo no fígado ajuda a flutuar."
+    },
+    {
+      question: "Qual destes tubarões é famoso pela cabeça em formato de T?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Tubarão-Tigre", "Tubarão-Mako", "Tubarão-Martelo"],
+      correct: 2,
+      explanation: "O formato ajuda na visão 360 graus e na recepção sensorial."
+    },
+    {
+      question: "Tubarões podem parar de nadar?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Sim, todos", "Alguns precisam nadar para respirar", "Não, nenhum"],
+      correct: 1,
+      explanation: "Muitas espécies precisam nadar constantemente para forçar a água pelas brânquias."
+    },
+    {
+      question: "Qual o nome do sentido que detecta vibrações na água?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Ecolocalização", "Linha Lateral", "Visão Térmica"],
+      correct: 1,
+      explanation: "A linha lateral percorre o corpo do animal e sente movimentos ao redor."
+    }
+],
+
+intermediario: [
+    {
+      question: "Qual o nome da estrutura usada pelos machos para a fecundação interna?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Gonopódio", "Cláper", "Nadadeira Anal"],
+      correct: 1,
+      explanation: "O cláper (ou mixopterígio) é a modificação das nadadeiras pélvicas para reprodução."
+    },
+    {
+      question: "Tubarões que mantêm os ovos dentro do corpo até o nascimento são:",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Ovíparos", "Vivíparos", "Ovovivíparos"],
+      correct: 2,
+      explanation: "No ovoviviparismo, o embrião se nutre do saco vitelino dentro da mãe."
+    },
+    {
+      question: "Qual espécie é conhecida por conseguir nadar em águas doces?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Tubarão-Cabeça-Chata", "Tubarão-Mako", "Tubarão-Azul"],
+      correct: 0,
+      explanation: "O Carcharhinus leucas possui osmorregulação que permite entrar em rios."
+    },
+    {
+      question: "O termo 'Elasmobrânquio' agrupa os tubarões e quais outros animais?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Quimeras", "Raias", "Peixes-boi"],
+      correct: 1,
+      explanation: "Tubarões e raias formam a subclasse Elasmobranchii."
+    },
+    {
+      question: "O que é o fenômeno da 'oofagia' observado em algumas espécies?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Comer algas", "Filhotes comem ovos não fecundados no útero", "Perda de dentes"],
+      correct: 1,
+      explanation: "É uma forma de canibalismo intrauterino para nutrição do embrião maior."
+    },
+    {
+      question: "Qual a função do espiráculo encontrado atrás dos olhos?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Audição", "Auxiliar na entrada de água para as brânquias", "Excretar sal"],
+      correct: 1,
+      explanation: "Muito importante para espécies que ficam paradas no fundo."
+    },
+    {
+      question: "Como se chama a proteção transparente que cobre o olho de alguns tubarões?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Membrana Nictitante", "Córnea Óssea", "Pálpebra Fixa"],
+      correct: 0,
+      explanation: "Ela protege o olho durante o ataque ou alimentação."
+    },
+    {
+      question: "Qual tubarão é considerado o mais rápido dos oceanos?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Tubarão-Azul", "Tubarão-Mako", "Tubarão-Tigre"],
+      correct: 1,
+      explanation: "O Mako pode atingir velocidades superiores a 70 km/h."
+    },
+    {
+      question: "A 'imobilidade tônica' é um estado de paralisia induzido por:",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Falta de oxigênio", "Virar o tubarão de dorso para baixo", "Luz forte"],
+      correct: 1,
+      explanation: "Ao serem invertidos, muitos tubarões entram em um estado de relaxamento profundo."
+    },
+    {
+      question: "Qual a principal função da glândula retal nos tubarões?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Digestão de gordura", "Excreção de excesso de sais", "Produção de hormônios"],
+      correct: 1,
+      explanation: "Ela ajuda a manter o equilíbrio osmótico, eliminando cloreto de sódio."
+    }
+],
+
+avancado: [
+    {
+      question: "Qual característica evolutiva define os tubarões como 'fósseis vivos'?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Plano corporal pouco alterado há milhões de anos", "Incapacidade de evoluir", "Extinção iminente"],
+      correct: 0,
+      explanation: "O design básico dos tubarões é tão eficiente que mudou pouco desde antes dos dinossauros."
+    },
+    {
+      question: "O que é o fenômeno de 'endotermia regional' em tubarões como o Branco e o Mako?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Sangue frio em todo o corpo", "Capacidade de manter partes do corpo mais quentes que a água", "Hibernação no inverno"],
+      correct: 1,
+      explanation: "Usam o sistema 'rete mirabile' para reter calor nos músculos e cérebro."
+    },
+    {
+      question: "Sobre a conservação, qual o impacto da remoção de tubarões (predadores de topo) nos oceanos?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Aumento da biodiversidade", "Cascata trófica e desequilíbrio do ecossistema", "Nenhum impacto significativo"],
+      correct: 1,
+      explanation: "Sem eles, populações de presas crescem descontroladamente, afetando toda a cadeia."
+    },
+    {
+      question: "Qual dessas espécies é conhecida por ter a gestação mais longa (até 3,5 anos)?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Tubarão-Cobra (Frilled Shark)", "Tubarão-Azul", "Tubarão-Limão"],
+      correct: 0,
+      explanation: "O tubarão-cobra possui um dos períodos de gestação mais longos entre os vertebrados."
+    },
+    {
+      question: "O que caracteriza a estratégia reprodutiva 'K-estrategista' dos tubarões?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Muitos filhotes e pouco cuidado", "Crescimento rápido e vida curta", "Crescimento lento, maturidade tardia e poucos filhotes"],
+      correct: 2,
+      explanation: "Isso os torna extremamente vulneráveis à sobrepesca, pois a reposição populacional é lenta."
+    },
+    {
+      question: "Qual a função do 'órgão de Leydig' nos elasmobrânquios?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Produção de glóbulos vermelhos", "Digestão de proteínas", "Auxílio na flutuabilidade"],
+      correct: 0,
+      explanation: "É um órgão linfoide que produz células sanguíneas, já que eles não têm medula óssea."
+    },
+    {
+      question: "O termo 'Ram Ventilation' refere-se a tubarões que:",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Bombam água com as bochechas", "Respiram ar atmosférico", "Precisam nadar com a boca aberta para oxigenar as brânquias"],
+      correct: 2,
+      explanation: "A ventilação ocorre pelo movimento progressivo do animal na coluna d'água."
+    },
+    {
+      question: "Qual o papel da ureia e do TMAO no sangue dos tubarões?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Eliminar venenos", "Manter o equilíbrio osmótico com a água do mar", "Aumentar a força muscular"],
+      correct: 1,
+      explanation: "Eles retêm ureia para evitar a perda excessiva de água por osmose para o mar."
+    },
+    {
+      question: "A 'Partenogênese' já foi documentada em fêmeas de tubarão. O que isso significa?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Reprodução assexuada sem fertilização por um macho", "Mudança de sexo durante a vida", "Capacidade de brilhar no escuro"],
+      correct: 0,
+      explanation: "Ocorre quando um óvulo se desenvolve em um embrião sem esperma."
+    },
+    {
+      question: "Qual estrutura ocular permite que tubarões enxerguem bem em condições de baixa luz?",
+      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
+      answers: ["Retina dupla", "Tapetum lucidum", "Cristalino quadrado"],
+      correct: 1,
+      explanation: "É uma camada reflexiva atrás da retina que aumenta a sensibilidade à luz."
+    }
+]
 };
 
 let quiz = [];
@@ -231,8 +432,8 @@ function showLevels(){
       <img src="./logo.jpg" class="logo-inicial">
       <h2 style="margin-bottom: 20px;">Escolha o nível</h2>
       <button class="level-btn" onclick="startGame('facil')">Fácil</button>
-      <button class="level-btn" onclick="startGame('medio')">Médio</button>
-      <button class="level-btn" onclick="startGame('dificil')">Difícil</button>
+      <button class="level-btn" onclick="startGame('intermediario')">Médio</button>
+      <button class="level-btn" onclick="startGame('avancado')">Difícil</button>
     `;
   });
 }
