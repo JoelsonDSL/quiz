@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+}
 <html lang="pt-BR">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -17,7 +19,9 @@
       margin: 0;
     }
 
-    .container {
+.container {
+  opacity: 1;
+  transition: opacity 0.3s ease;
       background: white;
       color: black;
       padding: 30px;
@@ -57,7 +61,35 @@
       color: black;
       font-size: 16px;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease;
     }
+
+/* brilho para TODOS os botões */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: skewX(-25deg);
+}
+
+button:hover::before {
+  left: 130%;
+  transition: left 0.6s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: translateY(4px);
+}
 
     #nextBtn { display: none; background: #32cd32; }
 
@@ -221,22 +253,28 @@ function showLevels(){
   `;
 }
 
-function startGame(level){
+function function startGame(level){
   quiz = bancoQuestoes[level];
-  document.getElementById("game").innerHTML = `
-    <div class="top-bar">
-      <span id="lives">❤️❤️❤️</span>
-      <span id="timer">⏱️ 30</span>
-    </div>
-    <div class="progress"><div class="progress-bar" id="progress"></div></div>
-    <img id="image">
-    <h2 id="question"></h2>
-    <div id="answers"></div>
-    <p id="feedback"></p>
-    <p id="explanation"></p>
-    <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
-  `;
-  loadQuestion();
+  current = 0;
+  score = 0;
+  lives = 3;
+
+  fadeTransition(() => {
+    document.getElementById("game").innerHTML = `
+      <div class="top-bar">
+        <span id="lives">❤️❤️❤️</span>
+        <span id="timer">⏱️ 30</span>
+      </div>
+      <div class="progress"><div class="progress-bar" id="progress"></div></div>
+      <img id="image">
+      <h2 id="question"></h2>
+      <div id="answers"></div>
+      <p id="feedback"></p>
+      <p id="explanation"></p>
+      <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+    `;
+    loadQuestion();
+  });
 }
 
 function startTimer(){
