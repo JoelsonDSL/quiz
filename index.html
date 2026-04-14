@@ -16,20 +16,19 @@
       height: 100vh;
       margin: 0;
     }
-.container {
-  background: white;
-  color: black;
-  padding: 30px;
-  border-radius: 20px;
 
-  width: 95%;
-  max-width: 500px;
-  min-height: 85vh;
+    .container {
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 20px;
+      width: 95%;
+      max-width: 500px;
+      min-height: 85vh;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-    
     img {
       width: 100%;
       max-height: 220px;
@@ -40,12 +39,13 @@
 
     .logo-inicial {
       width: 100%;
-      max-width: 140px; /* menor para não cortar */
+      max-width: 140px;
       height: auto;
-      object-fit: contain; /* evita cortar a imagem */
+      object-fit: contain;
       margin: 0 auto 20px auto;
       display: block;
     }
+
     button {
       display: block;
       margin: 8px auto;
@@ -58,57 +58,93 @@
       font-size: 16px;
       cursor: pointer;
     }
+
     #nextBtn { display: none; background: #32cd32; }
+
     .top-bar {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
     }
+
     .progress { height: 8px; background: #555; border-radius: 5px; overflow: hidden; }
     .progress-bar { height: 100%; width: 0%; background: #00ffcc; }
 
-/* Botão inicial com brilho + efeito push */
-.start-btn {
-  font-size: 28px;
-  padding: 25px;
-  font-weight: bold;
-  background: #00bfff;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 0 #009acd;
-  transition: all 0.15s ease;
-}
+    /* BOTÃO COMEÇAR */
+    .start-btn {
+      font-size: 28px;
+      padding: 25px;
+      font-weight: bold;
+      background: #00bfff;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 0 #009acd;
+      transition: all 0.15s ease;
+    }
 
-.start-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  transform: skewX(-25deg);
-}
+    .start-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-25deg);
+    }
 
-.start-btn:hover::before {
-  left: 130%;
-  transition: left 0.6s;
-}
+    .start-btn:hover::before {
+      left: 130%;
+      transition: left 0.6s;
+    }
 
-.start-btn:hover {
-  transform: scale(1.05);
-}
+    .start-btn:hover {
+      transform: scale(1.05);
+    }
 
-.start-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #009acd;
-}
+    .start-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #009acd;
+    }
+
+    /* BOTÕES DE NÍVEL */
+    .level-btn {
+      font-size: 22px;
+      padding: 18px;
+      font-weight: bold;
+      background: #1dbfd6;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 0 #128fa0;
+      transition: all 0.15s ease;
+    }
+
+    .level-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-25deg);
+    }
+
+    .level-btn:hover::before {
+      left: 130%;
+      transition: left 0.6s;
+    }
+
+    .level-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .level-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #128fa0;
+    }
   </style>
 </head>
 <body>
@@ -179,9 +215,9 @@ function showLevels(){
   document.getElementById("game").innerHTML = `
     <img src="./logo.jpg" class="logo-inicial">
     <h2 style="margin-bottom: 20px;">Escolha o nível</h2>
-    <button onclick="startGame('facil')">Fácil</button>
-    <button onclick="startGame('medio')">Médio</button>
-    <button onclick="startGame('dificil')">Difícil</button>
+    <button class="level-btn" onclick="startGame('facil')">Fácil</button>
+    <button class="level-btn" onclick="startGame('medio')">Médio</button>
+    <button class="level-btn" onclick="startGame('dificil')">Difícil</button>
   `;
 }
 
