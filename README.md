@@ -11,13 +11,6 @@
 
 ---
 
-## 🌐 Acesse o Projeto
-
-👉 *(adicione aqui depois se publicar no GitHub Pages)*
-`https://joelsondsl.github.io/quiz/`
-
----
-
 ## 📖 Sobre o Projeto
 
 Este projeto consiste em um quiz interativo educativo voltado ao estudo dos tubarões, abordando aspectos como biologia, ecologia, comportamento e conservação. A aplicação utiliza elementos de gamificação para tornar o aprendizado mais dinâmico e envolvente.
