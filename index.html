@@ -1,520 +1,250 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz de Tubarões</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Nunito', sans-serif;
       background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      display:flex;justify-content:center;align-items:center;height:100vh;margin:0;
     }
 
-.container {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-      background: white;
-      color: black;
-      padding: 30px;
-      border-radius: 20px;
-      width: 95%;
-      max-width: 500px;
-      min-height: 85vh;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    .container{
+      background:#fff;color:#000;padding:30px;border-radius:20px;
+      width:95%;max-width:560px;min-height:85vh;text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
     }
 
-    img {
-      width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px;
+    .logo{max-width:180px;margin:0 auto 16px;display:block}
+
+    img{width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin-bottom:10px}
+
+    .top-bar{display:flex;justify-content:space-between;margin-bottom:10px;font-weight:bold}
+
+    /* BOTÕES */
+    button{
+      width:100%;padding:16px;margin:8px 0;border:none;border-radius:12px;
+      background:#1dbfd6;font-weight:bold;cursor:pointer;
+      transition:.2s;position:relative;overflow:hidden;
     }
 
-    .logo-inicial {
-      width: 100%;
-      max-width: 140px;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto 20px auto;
-      display: block;
+    /* brilho */
+    button::before{
+      content:"";
+      position:absolute;
+      top:0;left:-75%;
+      width:50%;height:100%;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform:skewX(-25deg);
     }
 
-    button {
-      display: block;
-      margin: 8px auto;
-      padding: 20px;
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      background: #1dbfd6;
-      color: black;
-      font-size: 16px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.2s ease;
+    button:hover::before{
+      left:130%;
+      transition:left 0.6s;
     }
 
-/* brilho para TODOS os botões */
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-  transform: skewX(-25deg);
-}
+    button:hover{transform:scale(1.05)}
+    button:active{transform:translateY(3px)}
 
-button:hover::before {
-  left: 130%;
-  transition: left 0.6s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: translateY(4px);
-}
-
-    #nextBtn { display: none; background: #32cd32; }
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .progress { height: 8px; background: #555; border-radius: 5px; overflow: hidden; }
-    .progress-bar { height: 100%; width: 0%; background: #00ffcc; }
-
-    /* BOTÃO COMEÇAR */
-    .start-btn {
-      font-size: 28px;
-      padding: 25px;
-      font-weight: bold;
-      background: #00bfff;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 6px 0 #009acd;
-      transition: all 0.15s ease;
-    }
-
-    .start-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-      transform: skewX(-25deg);
-    }
-
-    .start-btn:hover::before {
-      left: 130%;
-      transition: left 0.6s;
-    }
-
-    .start-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .start-btn:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 #009acd;
-    }
-
-    /* BOTÕES DE NÍVEL */
-    .level-btn {
-      font-size: 22px;
-      padding: 18px;
-      font-weight: bold;
-      background: #1dbfd6;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 5px 0 #128fa0;
-      transition: all 0.15s ease;
-    }
-
-    .level-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-      transform: skewX(-25deg);
-    }
-
-    .level-btn:hover::before {
-      left: 130%;
-      transition: left 0.6s;
-    }
-
-    .level-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .level-btn:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 #128fa0;
-    }
+    #nextBtn{display:none;background:#32cd32}
   </style>
 </head>
 <body>
+
 <div class="container" id="game">
-  <img src="./logo.jpg" alt="Tubarões Sem Mistério: Conhecendo para Conviver" class="logo-inicial">
-  <h1 style="margin-bottom: 10px;">Tubarões Sem Mistério: Conhecendo para Conviver </h1>
+  <img src="./logo.jpg" class="logo">
+  <h1>🦈 Tubarões Sem Mistério</h1>
   <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6;">
     Este jogo foi desenvolvido para explorar, de forma interativa e educativa, os principais aspectos da biologia,
     ecologia e importância dos tubarões nos ecossistemas marinhos. Ao longo das fases, você irá testar seus
     conhecimentos sobre anatomia, comportamento, estratégias reprodutivas e o papel ecológico desses organismos.
-    
+    <br><br>
     Além disso, o quiz busca desmistificar ideias equivocadas e reforçar a importância da conservação dos tubarões,
     destacando seu papel como predadores de topo e reguladores das cadeias tróficas.
   </p>
-<button class="start-btn" onclick="showLevels()">▶️ Começar</button>
+  <button onclick="showLevels()">Começar</button>
 </div>
 
 <script>
+// ===== BANCO COMPLETO =====
 const bancoQuestoes = {
 facil: [
-    {
-      question: "Qual o maior tubarão que existe atualmente?", image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60", answers: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo"], correct: 1, explanation: "O Tubarão-Baleia pode atingir mais de 12 metros de comprimento."  },
-    {
-      question: "Do que é feito o esqueleto do tubarão?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Ossos rígidos", "Músculos apenas", "Cartilagem"],
-      correct: 2,
-      explanation: "O esqueleto é de cartilagem, o que os torna mais leves e flexíveis."
-    },
-    {
-      question: "Como se chamam os órgãos que detectam batimentos cardíacos das presas?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Ampolas de Lorenzini", "Linha Lateral", "Narinas"],
-      correct: 0,
-      explanation: "São pequenos poros que detectam campos elétricos."
-    },
-    {
-      question: "O tubarão-baleia se alimenta principalmente de:",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Grandes peixes", "Plâncton e pequenos peixes", "Focas"],
-      correct: 1,
-      explanation: "Apesar de gigante, ele é um animal filtrador."
-    },
-    {
-      question: "Quantas fendas branquiais a maioria dos tubarões possui?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["1 a 2", "5 a 7", "Mais de 10"],
-      correct: 1,
-      explanation: "A maioria possui de 5 a 7 pares de fendas branquiais."
-    },
-    {
-      question: "A pele do tubarão parece uma lixa por causa das escamas:",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Placoides", "Ciclóides", "Ctenóides"],
-      correct: 0,
-      explanation: "Também chamadas de dentículos dérmicos, reduzem o atrito na água."
-    },
-    {
-      question: "O que o tubarão usa para manter a flutuabilidade?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Bexiga natatória", "Fígado rico em óleo", "Pulmões"],
-      correct: 1,
-      explanation: "Como não possuem bexiga natatória, o óleo no fígado ajuda a flutuar."
-    },
-    {
-      question: "Qual destes tubarões é famoso pela cabeça em formato de T?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Tubarão-Tigre", "Tubarão-Mako", "Tubarão-Martelo"],
-      correct: 2,
-      explanation: "O formato ajuda na visão 360 graus e na recepção sensorial."
-    },
-    {
-      question: "Tubarões podem parar de nadar?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Sim, todos", "Alguns precisam nadar para respirar", "Não, nenhum"],
-      correct: 1,
-      explanation: "Muitas espécies precisam nadar constantemente para forçar a água pelas brânquias."
-    },
-    {
-      question: "Qual o nome do sentido que detecta vibrações na água?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Ecolocalização", "Linha Lateral", "Visão Térmica"],
-      correct: 1,
-      explanation: "A linha lateral percorre o corpo do animal e sente movimentos ao redor."
-    }
+  {
+    q: "Qual é o maior tubarão (e peixe) que existe atualmente?",
+    a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo"],
+    c: 1,
+    e: "O Tubarão-Baleia (Rhincodon typus) pode ultrapassar 12 metros, alimentando-se apenas de plâncton e pequenos peixes."
+  },
+  {
+    q: "De que material é formado o esqueleto dos tubarões?",
+    a: ["Ossos rígidos", "Cartilagem", "Tecido muscular"],
+    c: 1,
+    e: "Diferente de nós, o esqueleto deles é de cartilagem, o que os torna mais leves, flexíveis e ágeis na água."
+  },
+  {
+    q: "Como os tubarões detectam os batimentos cardíacos de uma presa?",
+    a: ["Pela visão", "Ampolas de Lorenzini", "Pelo olfato"],
+    c: 1,
+    e: "As Ampolas de Lorenzini são pequenos poros na cabeça que detectam campos elétricos emitidos por seres vivos."
+  },
+  {
+    q: "Os tubarões precisam nadar o tempo todo para não morrer?",
+    a: ["Não, todos podem parar", "Alguns sim, para forçar a água nas brânquias", "Sim, todos os tubarões"],
+    c: 1,
+    e: "Espécies pelágicas dependem da ventilação ram (nadar para respirar), enquanto espécies de fundo podem bombear água paradas."
+  },
+  {
+    q: "A pele do tubarão é áspera como uma lixa devido às escamas:",
+    a: ["Placoides", "Ciclóides", "Ctenóides"],
+    c: 0,
+    e: "Chamadas de dentículos dérmicos, essas escamas reduzem a turbulência e permitem um nado mais silencioso e rápido."
+  }
 ],
 
 intermediario: [
-    {
-      question: "Qual o nome da estrutura usada pelos machos para a fecundação interna?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Gonopódio", "Cláper", "Nadadeira Anal"],
-      correct: 1,
-      explanation: "O cláper (ou mixopterígio) é a modificação das nadadeiras pélvicas para reprodução."
-    },
-    {
-      question: "Tubarões que mantêm os ovos dentro do corpo até o nascimento são:",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Ovíparos", "Vivíparos", "Ovovivíparos"],
-      correct: 2,
-      explanation: "No ovoviviparismo, o embrião se nutre do saco vitelino dentro da mãe."
-    },
-    {
-      question: "Qual espécie é conhecida por conseguir nadar em águas doces?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Tubarão-Cabeça-Chata", "Tubarão-Mako", "Tubarão-Azul"],
-      correct: 0,
-      explanation: "O Carcharhinus leucas possui osmorregulação que permite entrar em rios."
-    },
-    {
-      question: "O termo 'Elasmobrânquio' agrupa os tubarões e quais outros animais?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Quimeras", "Raias", "Peixes-boi"],
-      correct: 1,
-      explanation: "Tubarões e raias formam a subclasse Elasmobranchii."
-    },
-    {
-      question: "O que é o fenômeno da 'oofagia' observado em algumas espécies?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Comer algas", "Filhotes comem ovos não fecundados no útero", "Perda de dentes"],
-      correct: 1,
-      explanation: "É uma forma de canibalismo intrauterino para nutrição do embrião maior."
-    },
-    {
-      question: "Qual a função do espiráculo encontrado atrás dos olhos?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Audição", "Auxiliar na entrada de água para as brânquias", "Excretar sal"],
-      correct: 1,
-      explanation: "Muito importante para espécies que ficam paradas no fundo."
-    },
-    {
-      question: "Como se chama a proteção transparente que cobre o olho de alguns tubarões?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Membrana Nictitante", "Córnea Óssea", "Pálpebra Fixa"],
-      correct: 0,
-      explanation: "Ela protege o olho durante o ataque ou alimentação."
-    },
-    {
-      question: "Qual tubarão é considerado o mais rápido dos oceanos?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Tubarão-Azul", "Tubarão-Mako", "Tubarão-Tigre"],
-      correct: 1,
-      explanation: "O Mako pode atingir velocidades superiores a 70 km/h."
-    },
-    {
-      question: "A 'imobilidade tônica' é um estado de paralisia induzido por:",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Falta de oxigênio", "Virar o tubarão de dorso para baixo", "Luz forte"],
-      correct: 1,
-      explanation: "Ao serem invertidos, muitos tubarões entram em um estado de relaxamento profundo."
-    },
-    {
-      question: "Qual a principal função da glândula retal nos tubarões?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Digestão de gordura", "Excreção de excesso de sais", "Produção de hormônios"],
-      correct: 1,
-      explanation: "Ela ajuda a manter o equilíbrio osmótico, eliminando cloreto de sódio."
-    }
+  {
+    q: "A qual classe taxonômica pertencem os tubarões e as raias?",
+    a: ["Osteichthyes", "Chondrichthyes", "Mammalia"],
+    c: 1,
+    e: "Pertencem aos Condrictes, o grupo dos peixes que possuem esqueleto cartilaginoso e fendas branquiais expostas."
+  },
+  {
+    q: "Como se chama o órgão reprodutor externo dos tubarões machos?",
+    a: ["Cláper", "Tentáculo", "Gonopódio"],
+    c: 0,
+    e: "O cláper é uma modificação da nadadeira pélvica usada para introduzir o esperma na fêmea (fecundação interna)."
+  },
+  {
+    q: "Qual destas espécies é famosa por conseguir subir rios de água doce?",
+    a: ["Tubarão-Azul", "Tubarão-Mako", "Tubarão-Cabeça-Chata"],
+    c: 2,
+    e: "O Cabeça-chata (Carcharhinus leucas) possui glândulas e rins adaptados para equilibrar o sal em água doce."
+  },
+  {
+    q: "Qual a função da glândula retal nos tubarões?",
+    a: ["Digestão", "Excreção de excesso de sal", "Produção de hormônios"],
+    c: 1,
+    e: "Como vivem em ambiente salino, essa glândula ajuda a eliminar o excesso de cloreto de sódio do organismo."
+  },
+  {
+    q: "O que é a membrana nictitante presente em alguns tubarões?",
+    a: ["Uma nadadeira extra", "Uma 'pálpebra' de proteção ocular", "Uma pele entre os dentes"],
+    c: 1,
+    e: "É uma pálpebra transparente que protege o globo ocular durante o ataque à presa ou colisões."
+  }
 ],
 
 avancado: [
-    {
-      question: "Qual característica evolutiva define os tubarões como 'fósseis vivos'?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Plano corporal pouco alterado há milhões de anos", "Incapacidade de evoluir", "Extinção iminente"],
-      correct: 0,
-      explanation: "O design básico dos tubarões é tão eficiente que mudou pouco desde antes dos dinossauros."
-    },
-    {
-      question: "O que é o fenômeno de 'endotermia regional' em tubarões como o Branco e o Mako?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Sangue frio em todo o corpo", "Capacidade de manter partes do corpo mais quentes que a água", "Hibernação no inverno"],
-      correct: 1,
-      explanation: "Usam o sistema 'rete mirabile' para reter calor nos músculos e cérebro."
-    },
-    {
-      question: "Sobre a conservação, qual o impacto da remoção de tubarões (predadores de topo) nos oceanos?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Aumento da biodiversidade", "Cascata trófica e desequilíbrio do ecossistema", "Nenhum impacto significativo"],
-      correct: 1,
-      explanation: "Sem eles, populações de presas crescem descontroladamente, afetando toda a cadeia."
-    },
-    {
-      question: "Qual dessas espécies é conhecida por ter a gestação mais longa (até 3,5 anos)?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Tubarão-Cobra (Frilled Shark)", "Tubarão-Azul", "Tubarão-Limão"],
-      correct: 0,
-      explanation: "O tubarão-cobra possui um dos períodos de gestação mais longos entre os vertebrados."
-    },
-    {
-      question: "O que caracteriza a estratégia reprodutiva 'K-estrategista' dos tubarões?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Muitos filhotes e pouco cuidado", "Crescimento rápido e vida curta", "Crescimento lento, maturidade tardia e poucos filhotes"],
-      correct: 2,
-      explanation: "Isso os torna extremamente vulneráveis à sobrepesca, pois a reposição populacional é lenta."
-    },
-    {
-      question: "Qual a função do 'órgão de Leydig' nos elasmobrânquios?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Produção de glóbulos vermelhos", "Digestão de proteínas", "Auxílio na flutuabilidade"],
-      correct: 0,
-      explanation: "É um órgão linfoide que produz células sanguíneas, já que eles não têm medula óssea."
-    },
-    {
-      question: "O termo 'Ram Ventilation' refere-se a tubarões que:",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Bombam água com as bochechas", "Respiram ar atmosférico", "Precisam nadar com a boca aberta para oxigenar as brânquias"],
-      correct: 2,
-      explanation: "A ventilação ocorre pelo movimento progressivo do animal na coluna d'água."
-    },
-    {
-      question: "Qual o papel da ureia e do TMAO no sangue dos tubarões?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Eliminar venenos", "Manter o equilíbrio osmótico com a água do mar", "Aumentar a força muscular"],
-      correct: 1,
-      explanation: "Eles retêm ureia para evitar a perda excessiva de água por osmose para o mar."
-    },
-    {
-      question: "A 'Partenogênese' já foi documentada em fêmeas de tubarão. O que isso significa?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Reprodução assexuada sem fertilização por um macho", "Mudança de sexo durante a vida", "Capacidade de brilhar no escuro"],
-      correct: 0,
-      explanation: "Ocorre quando um óvulo se desenvolve em um embrião sem esperma."
-    },
-    {
-      question: "Qual estrutura ocular permite que tubarões enxerguem bem em condições de baixa luz?",
-      image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=60",
-      answers: ["Retina dupla", "Tapetum lucidum", "Cristalino quadrado"],
-      correct: 1,
-      explanation: "É uma camada reflexiva atrás da retina que aumenta a sensibilidade à luz."
-    }
-]
-};
+  {
+    q: "Por que tubarões são considerados Predadores de Topo?",
+    a: ["Por serem maiores que todos", "Por controlarem as populações abaixo deles", "Por comerem apenas plantas"],
+    c: 1,
+    e: "Eles regulam a saúde do oceano, eliminando indivíduos doentes e mantendo o equilíbrio das teias alimentares."
+  },
+  {
+    q: "O que acontece se removermos os tubarões de um recife (Cascata Trófica)?",
+    a: ["O ecossistema prospera", "Ocorre um desequilíbrio e colapso da biodiversidade", "Nada acontece"],
+    c: 1,
+    e: "Sem o predador, as presas intermediárias aumentam e consomem excessivamente os recursos, destruindo o habitat."
+  },
+  {
+    q: "A estratégia reprodutiva 'K-estrategista' significa que eles têm:",
+    a: ["Muitos filhotes e crescimento rápido", "Poucos filhotes, maturação tardia e vida longa", "Reprodução mensal"],
+    c: 1,
+    e: "Isso os torna vulneráveis: se muitos forem pescados, a população demora décadas para se recuperar."
+  },
+  {
+    q: "O que caracteriza a endotermia regional em espécies como o Tubarão-Branco?",
+    a: ["Sangue totalmente quente", "Manter órgãos vitais mais aquecidos que a água ao redor", "Sangue totalmente frio"],
+    c: 1,
+    e: "Através da 'rete mirabile', eles retêm calor nos músculos e cérebro, permitindo caçar em águas muito geladas."
+  },
+  {
+    q: "O que é a 'partenogênese' documentada em algumas fêmeas de tubarão?",
+    a: ["Troca de sexo", "Reprodução assexuada (nascimento sem um macho)", "Cuidado parental intenso"],
+    c: 1, e: "É a capacidade de um óvulo se desenvolver em embrião sem fecundação, gerando um clone da mãe."}
+  ]
+  };
 
-let quiz = [];
-let current = 0;
-let score = 0;
-let lives = 3;
-let time = 30;
-let timerInterval;
+// ===== ESTADO =====
+let quiz=[],current=0,score=0,lives=3,time=30,timer;
 
-function fadeTransition(callback){
-  const game = document.getElementById("game");
-  game.style.opacity = 0;
-  setTimeout(() => {
-    callback();
-    game.style.opacity = 1;
-  }, 300);
-}
-
-// ✅ AGORA DEFINIDO CORRETAMENTE
+// ===== TELAS =====
 function showLevels(){
-  fadeTransition(() => {
-    document.getElementById("game").innerHTML = `
-      <img src="./logo.jpg" class="logo-inicial">
-      <h2 style="margin-bottom: 20px;">Escolha o nível</h2>
-      <button class="level-btn" onclick="startGame('facil')">Fácil</button>
-      <button class="level-btn" onclick="startGame('intermediario')">Médio</button>
-      <button class="level-btn" onclick="startGame('avancado')">Difícil</button>
-    `;
-  });
+  document.getElementById("game").innerHTML=`
+    <img src="./logo.jpg" class="logo">
+    <h2>Escolha o nível</h2>
+    <button onclick="startGame('facil')">Fácil</button>
+    <button onclick="startGame('intermediario')">Médio</button>
+    <button onclick="startGame('avancado')">Difícil</button>`;
 }
 
 function startGame(level){
-  quiz = bancoQuestoes[level];
-  current = 0;
-  score = 0;
-  lives = 3;
-
-  fadeTransition(() => {
-    document.getElementById("game").innerHTML = `
-      <div class="top-bar">
-        <span id="lives">❤️❤️❤️</span>
-        <span id="timer">⏱️ 30</span>
-      </div>
-      <div class="progress"><div class="progress-bar" id="progress"></div></div>
-      <img id="image">
-      <h2 id="question"></h2>
-      <div id="answers"></div>
-      <p id="feedback"></p>
-      <p id="explanation"></p>
-      <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
-    `;
-    loadQuestion();
-  });
+  quiz=bancoQuestoes[level];current=0;score=0;lives=3;
+  document.getElementById("game").innerHTML=`
+    <div class="top-bar"><span id="lives">❤️❤️❤️</span><span id="timer">⏱️ 30</span></div>
+    <img id="image">
+    <h2 id="question"></h2>
+    <div id="answers"></div>
+    <p id="feedback"></p>
+    <p id="explanation"></p>
+    <button id="nextBtn" onclick="nextQuestion()">Próxima</button>`;
+  loadQuestion();
 }
 
+// ===== QUIZ =====
 function loadQuestion(){
-  const q = quiz[current];
-  document.getElementById("question").innerText = q.question;
-  document.getElementById("image").src = q.image;
-  const answersDiv = document.getElementById("answers");
-
-  answersDiv.innerHTML = "";
-  document.getElementById("feedback").innerText = "";
-  document.getElementById("explanation").innerText = "";
-  document.getElementById("nextBtn").style.display = "none";
-
-  q.answers.forEach((ans, i) => {
-    const btn = document.createElement("button");
-    btn.innerText = ans;
-    btn.onclick = () => checkAnswer(i);
-    answersDiv.appendChild(btn);
+  clearInterval(timer);
+  const q=quiz[current];
+  document.getElementById("question").innerText=q.q;
+  document.getElementById("image").src="https://images.unsplash.com/photo-1560275619-4662e36fa65c";
+  const box=document.getElementById("answers");
+  box.innerHTML="";
+  document.getElementById("feedback").innerText="";
+  document.getElementById("explanation").innerText="";
+  document.getElementById("nextBtn").style.display="none";
+  q.a.forEach((ans,i)=>{
+    const b=document.createElement("button");
+    b.innerText=ans;
+    b.onclick=()=>checkAnswer(i);
+    box.appendChild(b);
   });
+  startTimer();
 }
 
+// ===== TIMER =====
+function startTimer(){
+  clearInterval(timer);time=30;
+  const el=document.getElementById("timer");
+  if(el) el.innerText="⏱️ "+time;
+  timer=setInterval(()=>{
+    time--;
+    const el=document.getElementById("timer");
+    if(el) el.innerText="⏱️ "+time;
+    if(time<=0){clearInterval(timer);checkAnswer(-1);} 
+  },1000);
+}
+
+// ===== RESPOSTA =====
 function checkAnswer(i){
-  const q = quiz[current];
-
-  if(i === q.correct){
-    score++;
-    document.getElementById("feedback").innerText = "✅ Correto!";
-  } else {
-    document.getElementById("feedback").innerText = "❌ Errado!";
-    loseLife();
-  }
-
-  document.getElementById("explanation").innerText = q.explanation;
-  document.getElementById("nextBtn").style.display = "block";
+  clearInterval(timer);
+  const q=quiz[current];
+  if(i===q.c){score++;document.getElementById("feedback").innerText="✅ Correto!";}
+  else{document.getElementById("feedback").innerText=(i===-1?"⏱️ Tempo esgotado!":"❌ Errado!");loseLife();}
+  document.getElementById("explanation").innerText=q.e;
+  document.getElementById("nextBtn").style.display="block";
+  document.querySelectorAll("#answers button").forEach(b=>b.disabled=true);
 }
 
-function loseLife(){
-  lives--;
-  document.getElementById("lives").innerText = "❤️".repeat(lives);
-  if(lives <= 0) endGame("💀 Você perdeu!");
-}
+function loseLife(){lives--;document.getElementById("lives").innerText="❤️".repeat(lives);if(lives<=0) endGame("💀 Você perdeu!");}
 
-function nextQuestion(){
-  current++;
-  if(current < quiz.length) loadQuestion();
-  else endGame("🏆 Fim do jogo!");
-}
+function nextQuestion(){current++;(current<quiz.length)?loadQuestion():endGame("🏆 Fim do jogo!");}
 
-function endGame(msg){
-  document.getElementById("game").innerHTML = `
-    <h2>${msg}</h2>
-    <p>Pontuação: ${score}/${quiz.length}</p>
-    <button onclick="location.reload()">Jogar novamente</button>
-  `;
-}
+function endGame(msg){clearInterval(timer);document.getElementById("game").innerHTML=`<h2>${msg}</h2><p>Pontuação: ${score}/10</p><button onclick="location.reload()">Jogar novamente</button>`;}
 </script>
+
 </body>
 </html>
