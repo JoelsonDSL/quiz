@@ -71,104 +71,195 @@
 <script>
 // ===== BANCO COMPLETO =====
 const bancoQuestoes = {
-facil: [
-  {
-    q: "Qual é o maior tubarão (e peixe) que existe atualmente?",
-    a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo"],
-    c: 1,
-    e: "O Tubarão-Baleia (Rhincodon typus) pode ultrapassar 12 metros, alimentando-se apenas de plâncton e pequenos peixes."
-  },
-  {
-    q: "De que material é formado o esqueleto dos tubarões?",
-    a: ["Ossos rígidos", "Cartilagem", "Tecido muscular"],
-    c: 1,
-    e: "Diferente de nós, o esqueleto deles é de cartilagem, o que os torna mais leves, flexíveis e ágeis na água."
-  },
-  {
-    q: "Como os tubarões detectam os batimentos cardíacos de uma presa?",
-    a: ["Pela visão", "Ampolas de Lorenzini", "Pelo olfato"],
-    c: 1,
-    e: "As Ampolas de Lorenzini são pequenos poros na cabeça que detectam campos elétricos emitidos por seres vivos."
-  },
-  {
-    q: "Os tubarões precisam nadar o tempo todo para não morrer?",
-    a: ["Não, todos podem parar", "Alguns sim, para forçar a água nas brânquias", "Sim, todos os tubarões"],
-    c: 1,
-    e: "Espécies pelágicas dependem da ventilação ram (nadar para respirar), enquanto espécies de fundo podem bombear água paradas."
-  },
-  {
-    q: "A pele do tubarão é áspera como uma lixa devido às escamas:",
-    a: ["Placoides", "Ciclóides", "Ctenóides"],
-    c: 0,
-    e: "Chamadas de dentículos dérmicos, essas escamas reduzem a turbulência e permitem um nado mais silencioso e rápido."
-  }
-],
+  facil: [
+    {
+      q: "Qual o maior tubarão (e peixe) que existe atualmente?",
+      a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo"],
+      c: 1,
+      e: "O Tubarão-Baleia (Rhincodon typus) pode ultrapassar 12 metros, alimentando-se apenas de plâncton e pequenos peixes."
+    },
+    {
+      q: "De que material é formado o esqueleto dos tubarões?",
+      a: ["Ossos rígidos", "Cartilagem", "Tecido muscular"],
+      c: 1,
+      e: "Diferente de nós, o esqueleto deles é de cartilagem, o que os torna mais leves, flexíveis e ágeis na água."
+    },
+    {
+      q: "Como os tubarões detectam os batimentos cardíacos de uma presa?",
+      a: ["Pela visão", "Ampolas de Lorenzini", "Pelo olfato"],
+      c: 1,
+      e: "As Ampolas de Lorenzini são pequenos poros na cabeça que detectam campos elétricos emitidos por seres vivos."
+    },
+    {
+      q: "Os tubarões precisam nadar o tempo todo para não morrer?",
+      a: ["Não, todos podem parar", "Alguns sim, para forçar a água nas brânquias", "Sim, todos"],
+      c: 1,
+      e: "Espécies pelágicas dependem da ventilação ram (nadar para respirar), enquanto espécies de fundo podem bombear água paradas."
+    },
+    {
+      q: "A pele do tubarão é áspera como uma lixa devido às escamas:",
+      a: ["Placoides", "Ciclóides", "Ctenóides"],
+      c: 0,
+      e: "Chamadas de dentículos dérmicos, essas escamas reduzem a turbulência e permitem um nado mais silencioso e rápido."
+    },
+    {
+      q: "Onde se localiza a boca da maioria dos tubarões?",
+      a: ["Na ponta do focinho", "Na parte de baixo da cabeça (ventral)", "Na parte de cima"],
+      c: 1,
+      e: "A posição ventral facilita a captura de presas no fundo e permite que o focinho abrigue sensores elétricos."
+    },
+    {
+      q: "Os tubarões possuem pálpebras como as nossas?",
+      a: ["Sim, iguais", "Não possuem", "Possuem, mas não piscam para lubrificar"],
+      c: 2,
+      e: "Eles não precisam piscar para lubrificar, pois a água já faz isso. Alguns usam a pálpebra (nictitante) apenas para proteção."
+    },
+    {
+      q: "Qual destes sentidos o tubarão usa para sentir cheiro de sangue?",
+      a: ["Audição", "Olfato", "Paladar"],
+      c: 1,
+      e: "O olfato dos tubarões é aguçadíssimo, conseguindo detectar uma gota de sangue em milhões de litros de água."
+    },
+    {
+      q: "Como é o formato da nadadeira caudal (rabo) da maioria dos tubarões?",
+      a: ["Em forma de leque", "Assimétrica (lobo superior maior)", "Redonda"],
+      c: 1,
+      e: "Esse formato (heterocerca) ajuda a gerar impulso e sustentação, impedindo que o tubarão afunde ao nadar."
+    },
+    {
+      q: "Existem tubarões que brilham no escuro?",
+      a: ["Não, é impossível", "Sim, através da bioluminescência", "Apenas quando saem da água"],
+      c: 1,
+      e: "Espécies de profundidade, como o tubarão-lanterna, possuem fotóforos que produzem luz para camuflagem ou comunicação."
+    }
+  ],
 
-intermediario: [
-  {
-    q: "A qual classe taxonômica pertencem os tubarões e as raias?",
-    a: ["Osteichthyes", "Chondrichthyes", "Mammalia"],
-    c: 1,
-    e: "Pertencem aos Condrictes, o grupo dos peixes que possuem esqueleto cartilaginoso e fendas branquiais expostas."
-  },
-  {
-    q: "Como se chama o órgão reprodutor externo dos tubarões machos?",
-    a: ["Cláper", "Tentáculo", "Gonopódio"],
-    c: 0,
-    e: "O cláper é uma modificação da nadadeira pélvica usada para introduzir o esperma na fêmea (fecundação interna)."
-  },
-  {
-    q: "Qual destas espécies é famosa por conseguir subir rios de água doce?",
-    a: ["Tubarão-Azul", "Tubarão-Mako", "Tubarão-Cabeça-Chata"],
-    c: 2,
-    e: "O Cabeça-chata (Carcharhinus leucas) possui glândulas e rins adaptados para equilibrar o sal em água doce."
-  },
-  {
-    q: "Qual a função da glândula retal nos tubarões?",
-    a: ["Digestão", "Excreção de excesso de sal", "Produção de hormônios"],
-    c: 1,
-    e: "Como vivem em ambiente salino, essa glândula ajuda a eliminar o excesso de cloreto de sódio do organismo."
-  },
-  {
-    q: "O que é a membrana nictitante presente em alguns tubarões?",
-    a: ["Uma nadadeira extra", "Uma 'pálpebra' de proteção ocular", "Uma pele entre os dentes"],
-    c: 1,
-    e: "É uma pálpebra transparente que protege o globo ocular durante o ataque à presa ou colisões."
-  }
-],
+  intermediario: [
+    {
+      q: "A qual classe taxonômica pertencem os tubarões e as raias?",
+      a: ["Osteichthyes", "Chondrichthyes", "Mammalia"],
+      c: 1,
+      e: "Pertencem aos Condrictes, o grupo dos peixes que possuem esqueleto cartilaginoso e fendas branquiais expostas."
+    },
+    {
+      q: "Como se chama o órgão reprodutor externo dos tubarões machos?",
+      a: ["Cláper", "Tentáculo", "Gonopódio"],
+      c: 0,
+      e: "O cláper é uma modificação da nadadeira pélvica usada para introduzir o esperma na fêmea (fecundação interna)."
+    },
+    {
+      q: "Qual destas espécies é famosa por conseguir subir rios de água doce?",
+      a: ["Tubarão-Azul", "Tubarão-Mako", "Tubarão-Cabeça-Chata"],
+      c: 2,
+      e: "O Cabeça-chata (Carcharhinus leucas) possui glândulas e rins adaptados para equilibrar o sal em água doce."
+    },
+    {
+      q: "Qual a função da glândula retal nos tubarões?",
+      a: ["Digestão", "Excreção de excesso de sal", "Produção de hormônios"],
+      c: 1,
+      e: "Como vivem em ambiente salino, essa glândula ajuda a eliminar o excesso de cloreto de sódio do organismo."
+    },
+    {
+      q: "O que é a membrana nictitante presente em alguns tubarões?",
+      a: ["Uma nadadeira extra", "Uma 'pálpebra' de proteção ocular", "Uma pele entre os dentes"],
+      c: 1,
+      e: "É uma pálpebra transparente que protege o globo ocular durante o ataque à presa ou colisões."
+    },
+    {
+      q: "O que é a 'oofagia' praticada por embriões de tubarão-touro?",
+      a: ["Comer algas", "Comer ovos não fecundados no útero", "Morder a própria cauda"],
+      c: 1,
+      e: "É uma estratégia de sobrevivência onde o primeiro embrião a eclodir se alimenta dos outros ovos da mãe."
+    },
+    {
+      q: "Qual a função do espiráculo encontrado atrás dos olhos?",
+      a: ["Melhorar a visão", "Auxiliar na respiração parado", "Eliminar resíduos"],
+      c: 1,
+      e: "O espiráculo permite a entrada de água oxigenada diretamente para as brânquias, essencial para tubarões de fundo."
+    },
+    {
+      q: "Qual é a principal função da Linha Lateral?",
+      a: ["Detectar luz", "Detectar vibrações e pressão na água", "Equilibrar temperatura"],
+      c: 1,
+      e: "É um sistema mecanorreceptor que permite ao tubarão 'sentir' movimentos de presas mesmo sem vê-las."
+    },
+    {
+      q: "Os tubarões possuem ouvidos?",
+      a: ["Não, são surdos", "Sim, internos e muito sensíveis", "Sim, externos"],
+      c: 1,
+      e: "Eles possuem ouvidos internos que detectam vibrações de longa distância (baixas frequências)."
+    },
+    {
+      q: "O fígado de um tubarão pode ocupar até quanto do seu peso corporal?",
+      a: ["5%", "Até 25-30%", "Mais de 60%"],
+      c: 1,
+      e: "O fígado é enorme e cheio de óleo (esqualeno), servindo como reserva de energia e auxílio na flutuabilidade."
+    }
+  ],
 
-avancado: [
-  {
-    q: "Por que tubarões são considerados Predadores de Topo?",
-    a: ["Por serem maiores que todos", "Por controlarem as populações abaixo deles", "Por comerem apenas plantas"],
-    c: 1,
-    e: "Eles regulam a saúde do oceano, eliminando indivíduos doentes e mantendo o equilíbrio das teias alimentares."
-  },
-  {
-    q: "O que acontece se removermos os tubarões de um recife (Cascata Trófica)?",
-    a: ["O ecossistema prospera", "Ocorre um desequilíbrio e colapso da biodiversidade", "Nada acontece"],
-    c: 1,
-    e: "Sem o predador, as presas intermediárias aumentam e consomem excessivamente os recursos, destruindo o habitat."
-  },
-  {
-    q: "A estratégia reprodutiva 'K-estrategista' significa que eles têm:",
-    a: ["Muitos filhotes e crescimento rápido", "Poucos filhotes, maturação tardia e vida longa", "Reprodução mensal"],
-    c: 1,
-    e: "Isso os torna vulneráveis: se muitos forem pescados, a população demora décadas para se recuperar."
-  },
-  {
-    q: "O que caracteriza a endotermia regional em espécies como o Tubarão-Branco?",
-    a: ["Sangue totalmente quente", "Manter órgãos vitais mais aquecidos que a água ao redor", "Sangue totalmente frio"],
-    c: 1,
-    e: "Através da 'rete mirabile', eles retêm calor nos músculos e cérebro, permitindo caçar em águas muito geladas."
-  },
-  {
-    q: "O que é a 'partenogênese' documentada em algumas fêmeas de tubarão?",
-    a: ["Troca de sexo", "Reprodução assexuada (nascimento sem um macho)", "Cuidado parental intenso"],
-    c: 1, e: "É a capacidade de um óvulo se desenvolver em embrião sem fecundação, gerando um clone da mãe."}
+  avancado: [
+    {
+      q: "Por que tubarões são considerados Predadores de Topo?",
+      a: ["Por serem maiores", "Por controlarem as populações abaixo deles", "Por comerem plantas"],
+      c: 1,
+      e: "Eles regulam a saúde do oceano, eliminando indivíduos doentes e mantendo o equilíbrio das teias alimentares."
+    },
+    {
+      q: "O que acontece se removermos os tubarões de um recife (Cascata Trófica)?",
+      a: ["O ecossistema prospera", "Ocorre um desequilíbrio e colapso", "Nada acontece"],
+      c: 1,
+      e: "Sem o predador, as presas intermediárias aumentam e consomem excessivamente os recursos, destruindo o habitat."
+    },
+    {
+      q: "A estratégia reprodutiva 'K-estrategista' significa que eles têm:",
+      a: ["Muitos filhotes", "Poucos filhotes, maturação tardia e vida longa", "Reprodução mensal"],
+      c: 1,
+      e: "Isso os torna vulneráveis: se muitos forem pescados, a população demora décadas para se recuperar."
+    },
+    {
+      q: "O que caracteriza a endotermia regional no Tubarão-Branco?",
+      a: ["Sangue totalmente quente", "Manter órgãos vitais mais aquecidos que a água", "Sangue totalmente frio"],
+      c: 1,
+      e: "Através da 'rete mirabile', eles retêm calor nos músculos e cérebro, permitindo caçar em águas geladas."
+    },
+    {
+      q: "O que é a 'partenogênese' documentada em fêmeas de tubarão?",
+      a: ["Troca de sexo", "Reprodução assexuada (sem macho)", "Cuidado parental"],
+      c: 1,
+      e: "É a capacidade de um óvulo se desenvolver em embrião sem fecundação, gerando um clone da mãe."
+    },
+    {
+      q: "O que diferencia a respiração por 'Bombeamento Bucal' da 'Ventilação Ram'?",
+      a: ["O uso de pulmões", "A capacidade de bombear água parado", "A respiração pela pele"],
+      c: 1,
+      e: "No bombeamento bucal, músculos da bochecha puxam a água; na ventilação ram, o tubarão deve nadar com a boca aberta."
+    },
+    {
+      q: "Qual a função do Órgão de Leydig nos elasmobrânquios?",
+      a: ["Produção de glóbulos vermelhos", "Digestão de gorduras", "Sensor de pressão"],
+      c: 0,
+      e: "Como tubarões não possuem medula óssea, o órgão de Leydig é essencial para a produção de células sanguíneas."
+    },
+    {
+      q: "Como o TMAO (Óxido de Trimetilamina) ajuda os tubarões?",
+      a: ["Aumenta a velocidade", "Protege as proteínas contra a ureia", "Melhora a visão"],
+      c: 1,
+      e: "O TMAO estabiliza as proteínas do corpo, permitindo que o tubarão retenha altos níveis de ureia para osmorregulação."
+    },
+    {
+      q: "O que é o 'Tapetum Lucidum' nos olhos dos tubarões?",
+      a: ["Uma mancha de cor", "Camada reflexiva que aumenta a visão noturna", "Um segundo cristalino"],
+      c: 1,
+      e: "Essa camada reflete a luz de volta pela retina, permitindo que enxerguem em águas escuras ou profundas."
+    },
+    {
+      q: "Qual a importância da identificação de 'Berçários' para a conservação?",
+      a: ["Áreas de lazer", "Locais onde filhotes crescem com proteção", "Áreas de pesca"],
+      c: 1,
+      e: "Proteger berçários é vital, pois os filhotes são vulneráveis e essas áreas garantem a renovação da espécie."
+    }
   ]
-  };
-
+};
 // ===== ESTADO =====
 let quiz=[],current=0,score=0,lives=3,time=30,timer;
 
