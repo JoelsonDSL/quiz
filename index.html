@@ -84,7 +84,7 @@ const bancoQuestoes = {
     {
       q: "Qual o maior tubarão (e peixe) que existe atualmente?",
       image: baseImgFacil + "F1.jpg",
-      a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo", "Tubarão-Cabeça-Chata"],
+      a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Cabeça-Chata"],
       c: 1,
       e: "O Tubarão-Baleia (<i>Rhincodon typus</i>) pode ultrapassar 12 metros, alimentando-se apenas de plâncton e pequenos peixes."
     },
@@ -283,10 +283,14 @@ const bancoQuestoes = {
 let quiz=[],current=0,score=0,lives=3,time=30,timer;
 
 function showLevels(){
-  document.getElementById("game").innerHTML=`
-  <img src="./logo.jpg" class="logo">
-  <h2>Escolha o nível</h2>
-  <button onclick="startGame('facil')">Fácil</button>`;
+  document.getElementById("game").innerHTML = `
+    <img src="./logo.jpg" class="logo">
+    <h2>Escolha o nível</h2>
+
+    <button onclick="startGame('facil')">Fácil</button>
+    <button onclick="startGame('intermediario')">Médio</button>
+    <button onclick="startGame('avancado')">Difícil</button>
+  `;
 }
 
 function startGame(level){
