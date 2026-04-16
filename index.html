@@ -61,21 +61,20 @@
     Este jogo foi desenvolvido para explorar, de forma interativa e educativa, os principais aspectos da biologia,
     ecologia e importância dos tubarões nos ecossistemas marinhos. Além disso, o quiz busca desmistificar ideias
     equivocadas e reforçar a importância da conservação dos tubarões, destacando seu papel como predadores de topo
-    e reguladores das cadeias tróficas.
-
-    
-    Este jogo é um proDuto desenvolvido pelo Laboratório de Ecossitemas Aquáticos (LEAqua - UFRPE).
+    e reguladores das cadeias tróficas. Este jogo é um proDuto desenvolvido pelo Laboratório de Ecossitemas Aquáticos (LEAqua - UFRPE).
     <br><br>
   </p>
   <button onclick="showLevels()">COMEÇAR</button>
 </div>
 
 <script>
+  const baseImgFacil = "https://raw.githubusercontent.com/JoelsonDSL/quiz/main/";
 // ===== BANCO COMPLETO =====
 const bancoQuestoes = {
   facil: [
     {
       q: "Qual o maior tubarão (e peixe) que existe atualmente?",
+      image: baseImgFacil + "F1.jpg",
       a: ["Tubarão-Branco", "Tubarão-Baleia", "Tubarão-Martelo", "Tubarão-Cabeça-Chata"],
       c: 1,
       e: "O Tubarão-Baleia (<i>Rhincodon typus</i>) pode ultrapassar 12 metros, alimentando-se apenas de plâncton e pequenos peixes."
