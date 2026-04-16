@@ -295,7 +295,7 @@ function loadQuestion(){
   const box=document.getElementById("answers");
   box.innerHTML="";
   document.getElementById("feedback").innerText="";
-  document.getElementById("explanation").innerHTML = q.explanation;
+  document.getElementById("explanation").innerHTML = "";
   document.getElementById("nextBtn").style.display="none";
   q.a.forEach((ans,i)=>{
     const b=document.createElement("button");
