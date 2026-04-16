@@ -315,23 +315,32 @@ function startGame(level){
 function loadQuestion(){
   clearInterval(timer);
 
-  const q=quiz[current];
+  const q = quiz[current];
 
-  document.getElementById("question").innerText=q.q;
-  document.getElementById("image").src=q.image||"";
-  document.getElementById("progress").style.width=(current/quiz.length*100)+"%";
+  document.getElementById("question").innerText = q.q;
 
-  const box=document.getElementById("answers");
-  box.innerHTML="";
+  // ✅ só usa imagem se existir
+  const img = document.getElementById("image");
+  if(q.image){
+    img.src = q.image;
+    img.style.display = "block";
+  }else{
+    img.style.display = "none";
+  }
 
-  document.getElementById("feedback").innerText="";
-  document.getElementById("explanation").innerHTML="";
-  document.getElementById("nextBtn").style.display="none";
+  document.getElementById("progress").style.width = (current/quiz.length*100)+"%";
+
+  const box = document.getElementById("answers");
+  box.innerHTML = "";
+
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("explanation").innerHTML = "";
+  document.getElementById("nextBtn").style.display = "none";
 
   q.a.forEach((ans,i)=>{
-    const b=document.createElement("button");
-    b.innerText=ans;
-    b.onclick=()=>checkAnswer(i);
+    const b = document.createElement("button");
+    b.innerText = ans;
+    b.onclick = ()=>checkAnswer(i);
     box.appendChild(b);
   });
 
