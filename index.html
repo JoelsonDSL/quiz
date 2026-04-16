@@ -295,7 +295,7 @@ function loadQuestion(){
   const box=document.getElementById("answers");
   box.innerHTML="";
   document.getElementById("feedback").innerText="";
-  document.getElementById("explanation").innerText="";
+  document.getElementById("explanation").innerHTML = q.explanation;
   document.getElementById("nextBtn").style.display="none";
   q.a.forEach((ans,i)=>{
     const b=document.createElement("button");
@@ -325,7 +325,7 @@ function checkAnswer(i){
   const q=quiz[current];
   if(i===q.c){score++;document.getElementById("feedback").innerText="✅ Correto!";}
   else{document.getElementById("feedback").innerText=(i===-1?"⏱️ Tempo esgotado!":"❌ Errado!");loseLife();}
-  document.getElementById("explanation").innerText=q.e;
+  document.getElementById("explanation").innerHTML = q.explanation;
   document.getElementById("nextBtn").style.display="block";
   document.querySelectorAll("#answers button").forEach(b=>b.disabled=true);
 }
