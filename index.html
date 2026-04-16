@@ -299,20 +299,28 @@ function startGame(level){
 // ===== QUIZ =====
 function loadQuestion(){
   clearInterval(timer);
-  const q=quiz[current];
-  document.getElementById("question").innerText=q.q;
-  document.getElementById("image").src="https://images.unsplash.com/photo-1560275619-4662e36fa65c";
-  const box=document.getElementById("answers");
-  box.innerHTML="";
-  document.getElementById("feedback").innerText="";
+
+  const q = quiz[current];
+
+  document.getElementById("question").innerText = q.q;
+
+  // ✅ usa imagem correta
+  document.getElementById("image").src = q.image || "";
+
+  const box = document.getElementById("answers");
+  box.innerHTML = "";
+
+  document.getElementById("feedback").innerText = "";
   document.getElementById("explanation").innerHTML = "";
-  document.getElementById("nextBtn").style.display="none";
+  document.getElementById("nextBtn").style.display = "none";
+
   q.a.forEach((ans,i)=>{
     const b=document.createElement("button");
     b.innerText=ans;
     b.onclick=()=>checkAnswer(i);
     box.appendChild(b);
   });
+
   startTimer();
 }
 
@@ -335,7 +343,7 @@ function checkAnswer(i){
   const q=quiz[current];
   if(i===q.c){score++;document.getElementById("feedback").innerText="✅ Correto!";}
   else{document.getElementById("feedback").innerText=(i===-1?"⏱️ Tempo esgotado!":"❌ Errado!");loseLife();}
-  document.getElementById("explanation").innerHTML = q.explanation;
+  ddocument.getElementById("explanation").innerHTML = q.e;
   document.getElementById("nextBtn").style.display="block";
   document.querySelectorAll("#answers button").forEach(b=>b.disabled=true);
 }
