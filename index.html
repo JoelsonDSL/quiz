@@ -68,8 +68,8 @@
 </div>
 
 <script>
-  const baseImgFacil = "https://raw.githubusercontent.com/JoelsonDSL/quiz/main/";
-// ===== BANCO COMPLETO =====
+const baseImgFacil = "https://raw.githubusercontent.com/JoelsonDSL/quiz/main/";
+
 const bancoQuestoes = {
   facil: [
     {
@@ -81,60 +81,69 @@ const bancoQuestoes = {
     },
     {
       q: "De que material é formado o esqueleto dos tubarões?",
+      image: baseImgFacil + "F2.jpg",
       a: ["Ossos rígidos", "Cartilagem", "Tecido muscular"],
       c: 1,
       e: "Diferente de nós, o esqueleto deles é de cartilagem, o que os torna mais leves, flexíveis e ágeis na água."
     },
     {
-      q: "Como os tubarões detectam os batimentos cardíacos de uma presa, atravésde qual estrutura?",
+      q: "Como os tubarões detectam os batimentos cardíacos de uma presa, através de qual estrutura?",
+      image: baseImgFacil + "F3.jpg",
       a: ["Olhos", "Ampolas de Lorenzini", "Narinas"],
       c: 1,
       e: "As Ampolas de Lorenzini são pequenos poros na cabeça que detectam campos elétricos emitidos por seres vivos."
     },
     {
       q: "Os tubarões precisam nadar o tempo todo para não morrer?",
+      image: baseImgFacil + "F4.jpg",
       a: ["Não, todos podem parar", "Alguns sim, para forçar a água nas brânquias", "Sim, todos"],
       c: 1,
-      e: "Espécies pelágicas dependem da ventilação ram (nadar para respirar), enquanto espécies de fundo podem bombear água paradas."
+      e: "Espécies pelágicas dependem da ventilação ram, enquanto espécies de fundo podem bombear água paradas."
     },
     {
-      q: "A superfície do tubarão é áspera como uma lixa devido a que?:",
+      q: "A superfície do tubarão é áspera como uma lixa devido a quê?",
+      image: baseImgFacil + "F5.jpg",
       a: ["Escamas placóides", "Pelos modificados", "Pele com microespinhos"],
       c: 0,
       e: "Chamadas de dentículos dérmicos, essas escamas reduzem a turbulência e permitem um nado mais silencioso e rápido."
     },
     {
       q: "Onde se localiza a boca da maioria dos tubarões?",
+      image: baseImgFacil + "F6.jpg",
       a: ["Na ponta do focinho", "Na parte de baixo da cabeça", "Na parte de cima"],
       c: 1,
       e: "A posição ventral facilita a captura de presas no fundo e permite que o focinho abrigue sensores elétricos."
     },
     {
       q: "Os tubarões possuem pálpebras como as nossas?",
+      image: baseImgFacil + "F7.jpg",
       a: ["Sim, iguais as dos seres humanos", "Não possuem pálpebras", "Possuem, mas não piscam para lubrificar"],
       c: 2,
       e: "Eles não precisam piscar para lubrificar, pois a água já faz isso. Alguns usam a pálpebra nictante apenas para proteção."
     },
     {
       q: "Qual destes sentidos o tubarão usa para sentir cheiro de sangue?",
+      image: baseImgFacil + "F8.jpg",
       a: ["Audição", "Olfato", "Paladar"],
       c: 1,
-      e: "O olfato dos é altamente sensível a moléculas associadas ao cheiro de sangue e de presas, eles possuem sistemas olfatórios enormes e especializados para detectar poucos odores em concentrações muito baixas."
+      e: "O olfato é altamente sensível, capaz de detectar pequenas concentrações de substâncias na água."
     },
     {
       q: "Como é o formato da nadadeira caudal da maioria dos tubarões?",
+      image: baseImgFacil + "F9.jpg",
       a: ["Em forma de leque", "Assimétrica", "Redonda"],
       c: 1,
-      e: "Esse formato (heterocerca) ajuda a gerar impulso e sustentação, impedindo que o tubarão afunde ao nadar."
+      e: "O formato heterocerca ajuda na propulsão e sustentação."
     },
     {
       q: "Existem tubarões que brilham no escuro?",
+      image: baseImgFacil + "F10.jpg",
       a: ["Não, é impossível", "Sim, através da bioluminescência", "Apenas quando saem da água"],
       c: 1,
-      e: "Espécies de profundidade, como o tubarão-lanterna, possuem fotóforos que produzem luz para camuflagem ou comunicação."
+      e: "Espécies de profundidade possuem fotóforos que produzem luz para camuflagem ou comunicação."
     }
   ],
-
+  
   intermediario: [
     {
       q: "A qual classe taxonômica pertencem os tubarões e as raias?",
